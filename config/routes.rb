@@ -1,10 +1,13 @@
 AltDash::Application.routes.draw do
+  get "portfolios/index"
   get "splash/about"
   get "splash/help"
   get "splasg/contact"
 
   root "splash#index"
   
+  resources :portfolios
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,35 @@
+<%= form_for :portfolio, url: portfolios_path do |f| %>
+  <p>
+    <%= f.label :Fund %><br>
+    <%= f.text_field :text %>
+  </p>
+
+  <p>
+    <%= f.label :Commitment %><br>
+    <%= f.text_field :integer %>
+  </p>
+ 
+  <p>
+    <%= f.label :Paid_in %><br>
+    <%= f.text_field :integer %>
+  </p>
+
+  <p>
+    <%= f.label :Distributed  %><br>
+    <%= f.text_field :float %>
+  </p>
+
+  <p>
+    <%= f.label :Adjustment  %><br>
+    <%= f.text_field :float %>
+  </p>
+
+  <p>
+    <%= f.label :Net_asset_value %><br>
+    <%= f.text_field :float %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
