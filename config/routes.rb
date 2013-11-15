@@ -1,6 +1,10 @@
 AltDash::Application.routes.draw do
-  #get "splash/index"
+  get "splash/about"
+  get "splash/help"
+  get "splasg/contact"
+
   root "splash#index"
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

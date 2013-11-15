@@ -1,8 +1,6 @@
 class SplashController < ApplicationController
+	
   def index
-  end
-
-  def home
 
   end
 
@@ -10,5 +8,8 @@ class SplashController < ApplicationController
 
   end	
 
+  def about
+
+  end	
 
 end
