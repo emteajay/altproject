@@ -1,27 +1,28 @@
-<%= form_for :portfolio, url: portfolios_path do |f| %>
+<%= form_for :portfolios, url: portfolios_path do |f| %>
+
   <p>
     <%= f.label :Fund %><br>
-    <%= f.text_field :text %>
+    <%= f.text_field :fund %>
   </p>
 
   <p>
     <%= f.label :Commitment %><br>
-    <%= f.text_field :integer %>
+    <%= f.text_field :commitment %>
   </p>
  
   <p>
     <%= f.label :Paid_in %><br>
-    <%= f.text_field :integer %>
+    <%= f.text_field :paid_in %>
   </p>
 
   <p>
     <%= f.label :Distributed  %><br>
-    <%= f.text_field :float %>
+    <%= f.text_field :distributed %>
   </p>
 
   <p>
     <%= f.label :Net_asset_value %><br>
-    <%= f.text_field :float %>
+    <%= f.text_field :net_asset_value %>
   </p>
 
   <p>
