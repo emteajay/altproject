@@ -1,41 +1,15 @@
-<%= form_for :portfolios, url: portfolios_path do |f| %>
+<h2>Add an investment below:</h2>
 
-  <% if @portfolio.errors.any? %>
+  <% if @portfolios.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@portoflio.errors.count, "error") %> prohibited this post form being saved: </h2>
+    <h2><%= pluralize(@portfolios.errors.count, "error") %> prohibited
+      this post from being saved:</h2>
     <ul>
-    <% @portfolio.errors.full_messages.each do |msg| %>
+    <% @portfolios.errors.full_messages.each do |msg| %>
       <li> <%= msg %> </li>
-    <%end%>
+    <% end %>
     </ul>
-  </div>    
+  </div>
   <% end %>
-  <p>
-    <%= f.label :Fund %><br>
-    <%= f.text_field :fund %>
-  </p>
 
-  <p>
-    <%= f.label :Commitment %><br>
-    <%= f.text_field :commitment %>
-  </p>
- 
-  <p>
-    <%= f.label :Paid_in %><br>
-    <%= f.text_field :paid_in %>
-  </p>
-
-  <p>
-    <%= f.label :Distributed  %><br>
-    <%= f.text_field :distributed %>
-  </p>
-
-  <p>
-    <%= f.label :Net_asset_value %><br>
-    <%= f.text_field :net_asset_value %>
-  </p>
-
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<%= render 'form' %>

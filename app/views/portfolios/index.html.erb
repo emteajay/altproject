@@ -1,6 +1,8 @@
 <h1>Tufts University</h1>
 
-<h2>Portoflio</h2>
+<h2>Portfolio</h2>
+
+<%= link_to 'Add Investment', new_portfolio_path %>
  
 <table>
   <tr>
@@ -18,6 +20,9 @@
       <td><%= portfolio.paid_in %></td>
       <td><%= portfolio.distributed %></td>
       <td><%= portfolio.net_asset_value %></td>
+      <td><%= link_to 'Show', portfolio %></td>
+      <td><%= link_to 'Edit', edit_portfolio_path(@portfolio) %></td>
+      <td><%= link_to 'Delete', portfolio_path(portfolio), method: :delete, data: {confirm: "Are you sure?"} %></td>
     </tr>
   <% end %>
 </table>

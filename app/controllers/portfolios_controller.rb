@@ -19,12 +19,29 @@ class PortfoliosController < ApplicationController
   end	
 
   def edit
-    @portfolios = Portfolio.find(params[:id])
+    @portfolio = Portfolio.find(params[:id])
   end  
 
   def show
   	@portfolio = Portfolio.find(params[:id])
-  end	
+  end
+
+  def update
+    @portfolio = Portfolio.find(params[:id])
+
+    if @portfolio.update(portfolio_params)
+      redirect_to @portfolio
+    else
+      render :edit
+    end    
+  end  
+
+  def destroy
+    @portfolio = Portfolio.find(params[:id])
+    @portfolio.destroy
+    redirect_to @portfolio
+  end  
+
 
   private
 
