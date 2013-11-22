@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131115211238) do
+ActiveRecord::Schema.define(version: 20131122012001) do
 
   create_table "portfolios", force: true do |t|
     t.string   "fund"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 20131115211238) do
     t.float    "distributed"
     t.float    "adjustment"
     t.float    "net_asset_value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", force: true do |t|
+    t.string   "first_name"
+    t.string   "last_name"
+    t.text     "email"
+    t.integer  "client_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
