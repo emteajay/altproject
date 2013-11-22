@@ -1,15 +1,4 @@
 <h2>Add an investment below:</h2>
 
-  <% if @portfolios.errors.any? %>
-  <div id="error_explanation">
-    <h2><%= pluralize(@portfolios.errors.count, "error") %> prohibited
-      this post from being saved:</h2>
-    <ul>
-    <% @portfolios.errors.full_messages.each do |msg| %>
-      <li> <%= msg %> </li>
-    <% end %>
-    </ul>
-  </div>
-  <% end %>
 
 <%= render 'form' %>

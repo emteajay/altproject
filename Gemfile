@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
 
+#gem 'therubyracer'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+
 gem "devise", "~> 3.2.1"
 
 gem "angellist_api", "~> 1.0.7"
