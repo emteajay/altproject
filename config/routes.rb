@@ -1,4 +1,5 @@
 AltDash::Application.routes.draw do
+  get "users/new"
   get "portfolios/index"
   get "splash/about"
   get "splash/help"
