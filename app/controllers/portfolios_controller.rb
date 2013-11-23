@@ -29,7 +29,7 @@ class PortfoliosController < ApplicationController
   def update
     @portfolio = Portfolio.find(params[:id])
 
-    if @portfolio.update(portfolio_params)
+    if @portfolio.update(portfolio_params_update)
       redirect_to @portfolio
     else
       render :edit
@@ -46,7 +46,12 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-  	params.require(:portfolio).permit(:fund, :commitment, :paid_in, :distributed, :adjustment, :net_asset_value)  	
+  	params.require(:portfolios).permit(:fund, :commitment, :paid_in, :distributed, :adjustment, :net_asset_value)  	
   end	
+
+  def portfolio_params_update
+    params.require(:portfolio).permit(:fund, :commitment, :paid_in, :distributed, :adjustment, :net_asset_value)   
+  end 
+
 
 end

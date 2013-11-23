@@ -1,5 +1,5 @@
 AltDash::Application.routes.draw do
-  devise_for :users
+  #devise_for :users
   get "users/new"
   get "portfolios/index"
   get "splash/about"

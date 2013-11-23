@@ -1,5 +1,35 @@
 <h3>Edit Investment:</h3>
 
-<%= render 'form' %>
+<%= form_for @portfolio do |f| %>
+
+  <p>
+    <%= f.label :Fund %><br>
+    <%= f.text_field :fund %>
+  </p>
+
+  <p>
+    <%= f.label :Commitment %><br>
+    <%= f.text_field :commitment %>
+  </p>
+ 
+  <p>
+    <%= f.label :Paid_in %><br>
+    <%= f.text_field :paid_in %>
+  </p>
+
+  <p>
+    <%= f.label :Distributed  %><br>
+    <%= f.text_field :distributed %>
+  </p>
+
+  <p>
+    <%= f.label :Net_asset_value %><br>
+    <%= f.text_field :net_asset_value %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
 
 <%= link_to 'Portfolio', portfolios_path %>
