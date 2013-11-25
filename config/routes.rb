@@ -1,10 +1,10 @@
 AltDash::Application.routes.draw do
-  #devise_for :users
+  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
   get "users/new"
   get "portfolios/index"
   get "splash/about"
   get "splash/help"
-  get "splasg/contact"
+  get "splash/contact"
 
   root "splash#index"
   
