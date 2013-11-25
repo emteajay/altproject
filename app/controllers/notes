@@ -1,0 +1,5 @@
+attr_reader :name, :total_money_raised
+
+put API access in the controller - no need for model
+
+put permalink in the database - query the table 
