@@ -1,5 +1,5 @@
 AltDash::Application.routes.draw do
-  devise_for :users, path_names: {sign_in: "login", sign_out: "logout"}
+  devise_for :users
   get "users/new"
   get "portfolios/index"
   get "splash/about"
@@ -7,7 +7,7 @@ AltDash::Application.routes.draw do
   get "splash/contact"
 
   root "splash#index"
-  
+  get '/portfolios', to: 'portfolios#index', as: 'user_root'
   resources :portfolios
 
   # The priority is based upon order of creation: first created -> highest priority.

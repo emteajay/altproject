@@ -1,7 +1,6 @@
 source 'https://rubygems.org'
 
 # for twitter bootstrap
-
 gem 'less-rails'
 gem 'libv8', '~> 3.11.8'
 gem 'twitter-bootstrap-rails'

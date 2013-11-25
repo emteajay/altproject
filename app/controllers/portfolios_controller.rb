@@ -1,8 +1,14 @@
 class PortfoliosController < ApplicationController
+
+  before_filter :authenticate_user!
   
   def index
-  	@portfolios = Portfolio.all
-    @portfolio = Portfolio.new
+    if user_signed_in?
+    	@portfolios = Portfolio.all
+      @portfolio = Portfolio.new
+    else
+      redirect_to root_path
+    end  
   end
 
   def new
