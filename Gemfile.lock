@@ -153,7 +153,6 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-rails
   less-rails
-  libv8 (~> 3.11.8)
   rails (= 4.0.0)
   sass-rails (~> 4.0.0)
   sdoc
