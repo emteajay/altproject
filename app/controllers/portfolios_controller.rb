@@ -52,7 +52,7 @@ class PortfoliosController < ApplicationController
   private
 
   def portfolio_params
-  	params.require(:portfolios).permit(:fund, :commitment, :paid_in, :distributed, :adjustment, :net_asset_value)  	
+  	params.require(:portfolio).permit(:fund, :commitment, :paid_in, :distributed, :adjustment, :net_asset_value)  	
   end	
 
   def portfolio_params_update
