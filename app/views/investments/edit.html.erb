@@ -1,0 +1,48 @@
+<%- model_class = Investment -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
+<%= form_for @investment, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :fund, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :fund, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :commitment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :commitment, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :paid_in, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :paid_in, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :distributed, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :distributed, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :adjustment, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :adjustment, :class => 'text_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :net_asset_value, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :net_asset_value, :class => 'text_field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                investments_path, :class => 'btn' %>
+  </div>
+<% end %>

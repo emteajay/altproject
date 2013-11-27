@@ -1,14 +1,14 @@
 AltDash::Application.routes.draw do
   devise_for :users
   get "users/new"
-  get "portfolios/index"
+  get "investments/index"
   get "splash/about"
   get "splash/help"
   get "splash/contact"
 
   root "splash#index"
-  get '/portfolios', to: 'portfolios#index', as: 'user_root'
-  resources :portfolios
+  get '/investments', to: 'investments#index', as: 'user_root'
+  resources :investments
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

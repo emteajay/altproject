@@ -13,13 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20131122020337) do
 
-  create_table "portfolios", force: true do |t|
+  create_table "investments", force: true do |t|
     t.string   "fund"
     t.integer  "commitment"
     t.integer  "paid_in"
     t.float    "distributed"
     t.float    "adjustment"
     t.float    "net_asset_value"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
