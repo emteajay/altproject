@@ -4,7 +4,7 @@ class InvestmentsController < ApplicationController
   
   def index
     if user_signed_in?
-    	@investments = current_user.investments
+    	@investments = Investment.all
       @investment = Investment.new
     else
       redirect_to root_path
