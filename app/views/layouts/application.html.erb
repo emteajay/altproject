@@ -20,10 +20,10 @@
 		    <a class="brand" href="">AltDash</a>
 		    <div class="nav-collapse">
 		    	<ul class="nav">
-		    		<li><%= link_to 'about us', splash_about_path %></li>
-		    		<li><%= link_to 'contact', splash_contact_path %></li>
-		    		<li><%= link_to 'home', root_path %></li>
-		    		<li><%= link_to 'portfolio', investments_path %></li>
+		    		<li><%= link_to 'Home', root_path %></li>
+		    		<li><%= link_to 'About Us', splash_about_path %></li>
+		    		<li><%= link_to 'Contact', splash_contact_path %></li>
+		    		<li><%= link_to 'Portfolio', investments_path %></li>
 		    	</ul>
 		    </div>
  		</div>
@@ -34,8 +34,11 @@
 	<div class="row">
 		<div class="span9"><%= yield %></div>
 		<div class="span3">
-			<h3> Space </h3>	
-			About us!
+			<h4> Search for a Company </h4>	
+			<%= form_tag "/companies", method: "GET" do %>
+			  <%= text_field_tag :q, params[:q] %>
+			  <%= submit_tag "search" %>
+			<% end %>
 		</div>	
 	</div>
 	

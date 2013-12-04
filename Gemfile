@@ -9,7 +9,7 @@ gem 'therubyracer'
 gem "devise", "~> 3.2.1"
 
 gem "angellist_api", "~> 1.0.7"
-gem "crunchbase", "~> 0.3.0"
+gem "crunchbase"
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.0'

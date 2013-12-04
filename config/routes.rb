@@ -5,10 +5,14 @@ AltDash::Application.routes.draw do
   get "splash/about"
   get "splash/help"
   get "splash/contact"
+  get "companies/index"
 
   root "splash#index"
+
   get '/investments', to: 'investments#index', as: 'user_root'
+  
   resources :investments
+  resources :companies
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -20,11 +20,11 @@
       <tr>
         <td><%= link_to investment.id, investment_path(investment) %></td>
         <td><%= investment.fund %></td>
-        <td><%= investment.commitment %></td>
-        <td><%= investment.paid_in %></td>
-        <td><%= investment.distributed %></td>
-        <td><%= investment.adjustment %></td>
-        <td><%= investment.net_asset_value %></td>
+        <td style="text-align: center;"><%= investment.commitment %></td>
+        <td style="text-align: center;"><%= investment.paid_in %></td>
+        <td style="text-align: center;"><%= investment.distributed %></td>
+        <td style="text-align: center;"><%= investment.adjustment %></td>
+        <td style="text-align: center;"><%= investment.net_asset_value %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_investment_path(investment), :class => 'btn btn-mini' %>
@@ -40,11 +40,11 @@
         <tr>
           <th>Total</th>
           <th></th>   
-          <th><%= Investment.sum('commitment') %></th> 
-          <th><%= Investment.sum('paid_in') %></th> 
-          <th><%= Investment.sum('distributed') %></th>
-          <th><%= Investment.sum('adjustment') %></th>
-          <th><%= Investment.sum('net_asset_value') %></th>
+          <th style="text-align: center;"><%= Investment.sum('commitment') %></th> 
+          <th style="text-align: center;"><%= Investment.sum('paid_in') %></th> 
+          <th style="text-align: center;"><%= Investment.sum('distributed') %></th>
+          <th style="text-align: center;"><%= Investment.sum('adjustment') %></th>
+          <th style="text-align: center;"><%= Investment.sum('net_asset_value') %></th>
           <th></th>
         </tr>
       </div>
@@ -55,3 +55,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_investment_path,
             :class => 'btn btn-primary' %>
+
