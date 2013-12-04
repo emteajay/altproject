@@ -36,8 +36,21 @@
         </td>
       </tr>
     <% end %>
+      <div>
+        <tr>
+          <th>Total</th>
+          <th></th>   
+          <th><%= Investment.sum('commitment') %></th> 
+          <th><%= Investment.sum('paid_in') %></th> 
+          <th><%= Investment.sum('distributed') %></th>
+          <th><%= Investment.sum('adjustment') %></th>
+          <th><%= Investment.sum('net_asset_value') %></th>
+          <th></th>
+        </tr>
+      </div>
   </tbody>
 </table>
+
 
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_investment_path,

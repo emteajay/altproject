@@ -11,6 +11,14 @@ class InvestmentsController < ApplicationController
     end  
   end
 
+  def sum
+    @commitment_sum = Investment.sum('commitment')
+    @paid_in_sum = Investment.sum('paid_in')
+    @distributed_sum = Investment.sum('distributed')
+    @adjustment_sum = Investment.sum('adjustment')
+    @net_asset_value_sum = Investment.sum('net_asset_value')
+  end
+
   def new
   	@investments = Investment.new
   end	
