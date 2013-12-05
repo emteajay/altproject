@@ -1,7 +1,7 @@
-class CompaniesController < ApplicationController
+class InvestorsController < ApplicationController
 
 	def index
-		@company = search_for(params[:q])
+	@investor = search_for(params[:q])
 	end
 
 	private
@@ -12,7 +12,7 @@ class CompaniesController < ApplicationController
 		# if our_company.nil?
 		return if query.nil?
 		#Crunchbase::API.key = 'yecqtsu3dszque7rntydphap'
-		company = Crunchbase::Company.find(query)
+		investor = Crunchbase::FinancialOrganization.find(query)
 		# @our_company = Company.new #create a new instance of the company
 		# @our_company.name = company.name
 		# @our_company.total_money_raised = company.total_money_raised
@@ -22,4 +22,5 @@ class CompaniesController < ApplicationController
 		# our_company.save #will save to database
 		#puts "Crunchbase company class is #{company.class}" #will only show up in irb
 	end
+
 end

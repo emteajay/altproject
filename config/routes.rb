@@ -1,4 +1,5 @@
 AltDash::Application.routes.draw do
+  get "investors/index"
   devise_for :users
   get "users/new"
   get "investments/index"
@@ -13,6 +14,7 @@ AltDash::Application.routes.draw do
   
   resources :investments
   resources :companies
+  resources :investors
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
