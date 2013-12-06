@@ -8,7 +8,7 @@ class InvestmentsController < ApplicationController
       @investment = Investment.new
     else
       redirect_to root_path
-    end  
+    end
   end
 
   def new
