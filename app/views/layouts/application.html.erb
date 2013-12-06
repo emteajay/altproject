@@ -34,8 +34,9 @@
 	<div class="row">
 		<div class="span9"><%= yield %></div>
 		<div class="span3">
+			<% search = "companies" %>
 			<h4> Search for a Company </h4>	
-			<%= form_tag "/companies", method: "GET" do %>
+			<%= form_tag "/#{search}", method: "GET" do %>
 			  <%= text_field_tag :q, params[:q] %>
 			  <%= submit_tag "search" %>
 			<% end %>

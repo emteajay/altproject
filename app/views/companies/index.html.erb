@@ -4,5 +4,8 @@
 	<p> <%= @company.homepage_url %> </p>
 	<p> Funds Raised: <%= @company.total_money_raised %> </p>
 	<p> <%= raw @company.overview %> </p>
-	<p> Acquisitions: <%= raw @company.acquisitions %> </p>
+	<% acquisitions = @company.acquisitions %>
+	<% acquisitions_hash = Hash[acquisitions.map {|key, value| [key, value]}] %>
+	<p> Acquisitions: <%= acquisitions_hash.class %> </p>
+	<p> <%= acquisitions_hash %> </p>
 </section>
