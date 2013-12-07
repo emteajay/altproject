@@ -1,7 +1,7 @@
 class InvestorsController < ApplicationController
 
 	def index
-	@investor = search_for(params[:q])
+		@investor = search_for(params[:q])
 	end
 
 	private
