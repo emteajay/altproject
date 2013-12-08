@@ -6,22 +6,9 @@
 	<p> <%= @company.permalink %> </p>
 	<p> Founded: <%= @company.founded_year %> </p>
 	<p> Funds Raised: <%= @company.total_money_raised %> </p>
-	<p> Funding Rounds: <%= @company.funding_rounds[0] %> </p>
+<!-- 	<p> Funding Rounds: <%= @company.funding_rounds %> </p> -->
 	<p> Category: <%= @company.category_code %> </p>
-	<p> Offices: <%= @company.offices[0] %> </p>
+<!-- 	<p> Offices: <%= @company.offices %> </p> -->
 	<p> Number of Employees: <%= @company.number_of_employees %> </p>
 	<p> <%= raw @company.overview %> </p>
-
-	<% acquisitions = @company.acquisitions[0] %>
-
-	<p> Acquisitions Class: <%= acquisitions.class %> </p>
-
-	<p> <%= acquisitions %> </p>
-<!-- 
-	<% acquisitions_hash = Hash[acquisitions.map {|key, value| [key, value]}] %>
-
-	<p> Acquisitions Hash Class: <%= acquisitions_hash.class %> </p>
-
-	<p> <%= acquisitions_hash.keys %> </p> -->
-
 </section>

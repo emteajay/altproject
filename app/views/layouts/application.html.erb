@@ -36,12 +36,6 @@
 		<div class="span3">
 			<% search = "companies" %>
 			<h4> Search Database </h4>	
-			<select name="Search">
-				<option></option>
-				<option>Company</option>
-				<option>Financial Organization</option>
-				<option>Person</option>
-			</select>
 			<%= form_tag "/#{search}", method: "GET" do %>
 			  <%= text_field_tag :q, params[:q] %>
 			  <%= submit_tag "search" %>
