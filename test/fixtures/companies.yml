@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  permalink: MyString
+  name: MyString
+  acquisitions: 1
+  phone_number: MyText
+  category_code: MyString
+  founded_year: 1
+  funding_rounds: 1
+  homepage_url: MyString
+  ipo: 1
+  offices: 1
+  number_of_employees: 1
+  total_money_raised: MyString
+  twitter_username: MyString
+  overview: MyText
+
+two:
+  permalink: MyString
+  name: MyString
+  acquisitions: 1
+  phone_number: MyText
+  category_code: MyString
+  founded_year: 1
+  funding_rounds: 1
+  homepage_url: MyString
+  ipo: 1
+  offices: 1
+  number_of_employees: 1
+  total_money_raised: MyString
+  twitter_username: MyString
+  overview: MyText

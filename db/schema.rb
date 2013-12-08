@@ -11,7 +11,43 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131122020337) do
+ActiveRecord::Schema.define(version: 20131208010956) do
+
+  create_table "companies", force: true do |t|
+    t.string   "permalink"
+    t.string   "name"
+    t.integer  "acquisitions"
+    t.text     "phone_number"
+    t.string   "category_code"
+    t.integer  "founded_year"
+    t.integer  "funding_rounds"
+    t.string   "homepage_url"
+    t.integer  "ipo"
+    t.integer  "offices"
+    t.integer  "number_of_employees"
+    t.string   "total_money_raised"
+    t.string   "twitter_username"
+    t.text     "overview"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "financial_organizations", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.string   "description"
+    t.integer  "founded_year"
+    t.integer  "funds"
+    t.string   "homepage_url"
+    t.integer  "number_of_employees"
+    t.integer  "integer"
+    t.integer  "offices"
+    t.text     "overview"
+    t.text     "phone_number"
+    t.string   "twitter_username"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "investments", force: true do |t|
     t.string   "fund"
