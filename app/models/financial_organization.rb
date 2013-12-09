@@ -5,22 +5,21 @@ class FinancialOrganization < ActiveRecord::Base
 	private
 
 	def self.search_for(query) #self is like company.search_for
-		
-		# our_company = Company.where(name: query) use when stored to database. DONT DO YET BECAUSE DATABASE WON'T BE UPDATED
-		# if our_company.nil?
-		return if query.nil?
-		#Crunchbase::API.key = 'yecqtsu3dszque7rntydphap'
-		investor = Crunchbase::FinancialOrganization.find(query)
-		# @our_company = Company.new #create a new instance of the company
-		# @our_company.name = company.name
-		# @our_company.total_money_raised = company.total_money_raised
-		# @our_company.phone_number = company.twitter_username
-		# @our_company.description = company.overview
-		# @our_company
-		# our_company.save #will save to database
-		#puts "Crunchbase company class is #{company.class}" #will only show up in irb
+		company = Crunchbase::FinancialOrganization.find(query)
+		# saved_company = FinancialOrganization.where(name: query) #use when stored to database. DONT DO YET BECAUSE DATABASE WON'T BE UPDATED
+		# saved_company = FinancialOrganization.find_or_create_by(
+		# 	name: financial_organization.name  ,
+		# 	permalink: financial_organization.permalink ,
+		# 	description: financial_organization.description ,
+		# 	founded_year: financial_organization.founded_year ,
+		# 	funds: financial_organization.funds ,
+		# 	homepage_url: financial_organization.homepage_url ,
+		# 	number_of_employees: financial_organization.number_of_employees ,	
+		# 	offices: financial_organization.offices	,
+		# 	overview: financial_organization.overview ,
+		# 	phone_number: financial_organization.phone_number ,
+		# 	twitter_username: financial_organization.twitter_username
+		# 	)         
 	end
-
-	
 	
 end
