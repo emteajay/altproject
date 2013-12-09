@@ -20,4 +20,7 @@ class FinancialOrganization < ActiveRecord::Base
 		# our_company.save #will save to database
 		#puts "Crunchbase company class is #{company.class}" #will only show up in irb
 	end
+
+	
+	
 end
