@@ -31,14 +31,18 @@ class Companies < ActiveRecord::Base
 		company = Crunchbase::Company.find(query)
 		saved_company = Companies.where(name: query) #use when stored to database. DONT DO YET BECAUSE DATABASE WON'T BE UPDATED
 		saved_company = Companies.find_or_create_by(
-			name: company.name  ,
 			permalink: company.permalink ,
+			name: company.name  ,
+			# acquisitions: company.acquisitions ,
 			phone_number: company.phone_number ,
-			total_money_raised: company.total_money_raised ,
 			category_code: company.category_code ,
 			founded_year: company.founded_year ,
+			# funding_rounds: company.funding_rounds ,
 			homepage_url: company.homepage_url ,
+			# ipo: company.ipo ,
+			# offices: company.offices ,
 			number_of_employees: company.number_of_employees ,
+			total_money_raised: company.total_money_raised ,
 			twitter_username: company.twitter_username ,
 			overview: company.overview
 			)         

@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 
 gem 'simple_form'
 
+gem "pg"
+
 # for twitter bootstrap
 gem 'less-rails'
 gem 'libv8', '~> 3.11.8'
