@@ -2,7 +2,7 @@
 	<h4> <%= @company.name %> </h4>
 	<p> Phone Number: <%= @company.phone_number %> </p>
 	<p> Twitter Username: <%= @company.twitter_username %> </p>
-	<p> <%= @company.homepage_url %> </p>
+	<p> <a href=<%= @company.homepage_url %> > <%= @company.homepage_url %> </a> </p>
 	<p> <%= @company.permalink %> </p>
 	<p> Founded: <%= @company.founded_year %> </p>
 	<p> Funds Raised: <%= @company.total_money_raised %> </p>
