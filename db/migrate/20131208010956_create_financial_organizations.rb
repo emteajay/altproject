@@ -7,17 +7,17 @@ class CreateFinancialOrganizations < ActiveRecord::Migration
       t.integer :founded_year
       t.integer :founded_month
       t.integer :founded_day
-      t.string :funds
-      t.string :investments
+      t.text :funds
+      t.text :investments
       t.string :homepage_url
       t.integer :number_of_employees
-      t.string :offices
+      t.text :offices
       t.string :overview
       t.string :phone_number
       t.string :twitter_username
       t.datetime :updated_at
-      t.string :relationships
-      t.string :milestones
+      t.text :relationships
+      t.text :milestones
       t.string :blog_url
       t.references :users
 
