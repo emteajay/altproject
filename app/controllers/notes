@@ -11,3 +11,54 @@ put permalink in the database - query the table
 	# 	elsif model_type == "People"
 	# 		Person.search_for
 	# end
+
+				<%= form_tag search_url_path, method: "GET" do %>
+				<%= option_tag ["Company", "People", "Investors"], :search_model %>
+
+  create_table "companies", force: true do |t|
+    t.string   "permalink" 
+    t.string   "name"
+    t.string   "acquisitions" - array
+    t.string   "phone_number"
+    t.string   "category_code"
+    t.integer  "founded_year"
+    t.integer  "founded_month"
+    t.integer  "founded_day"
+    t.string   "funding_rounds" - array
+    t.string   "homepage_url"
+    t.string   "ipo" - hash
+    t.string   "offices" - array
+    t.integer  "number_of_employees"
+    t.string   "total_money_raised"
+    t.string   "twitter_username"
+    t.string   "overview"
+    t.datetime "updated_at"
+    t.string   "relationships" - array
+    t.string   "investments" - array
+    t.string   "milestones" - array
+    t.integer  "investments_id"
+    t.integer  "financial_organizations_id"
+    t.datetime "created_at"
+  end
+
+    create_table "financial_organizations", force: true do |t|
+    t.string   "name"
+    t.string   "permalink"
+    t.string   "description"
+    t.integer  "founded_year"
+    t.integer  "founded_month"
+    t.integer  "founded_day"
+    t.text     "funds",    - array           limit: 255
+    t.string   "investments" - array
+    t.string   "homepage_url"
+    t.integer  "number_of_employees"
+    t.string   "offices" - array
+    t.string   "overview"
+    t.string   "phone_number"
+    t.string   "twitter_username"
+    t.datetime "updated_at"
+    t.string   "relationships" - array
+    t.string   "milestones" - array
+    t.string   "blog_url"
+    t.datetime "created_at"
+  end

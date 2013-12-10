@@ -4,7 +4,11 @@ class FinancialOrganization < ActiveRecord::Base
 
 	serialize :funds
 	serialize :offices
+	serialize :investments
+	serialize :relationships
+	serialize :milestones
 
+	
 	private
 
 	def self.search_for(query) #self is like company.search_for
@@ -15,13 +19,19 @@ class FinancialOrganization < ActiveRecord::Base
 			permalink: financial_organization.permalink ,
 			description: financial_organization.description ,
 			founded_year: financial_organization.founded_year ,
+			founded_month: financial_organization.founded_month ,
+			founded_day: financial_organization.founded_day ,
 			funds: financial_organization.funds ,
+			#investments: financial_organization.investments ,
 			homepage_url: financial_organization.homepage_url ,
 			number_of_employees: financial_organization.number_of_employees ,	
 			offices: financial_organization.offices	,
 			overview: financial_organization.overview ,
 			phone_number: financial_organization.phone_number ,
-			twitter_username: financial_organization.twitter_username
+			twitter_username: financial_organization.twitter_username ,
+			updated_at: financial_organization.updated_at ,
+			#relationships: financial_organization.relationships ,
+			#milestones: financial_organization.milestones
 			)         
 	end
 	

@@ -19,6 +19,7 @@ class CreateFinancialOrganizations < ActiveRecord::Migration
       t.string :relationships
       t.string :milestones
       t.string :blog_url
+      t.references :users
 
       t.timestamps
     end
