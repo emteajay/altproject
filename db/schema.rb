@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131208200120) do
+ActiveRecord::Schema.define(version: 20131210000038) do
 
   create_table "companies", force: true do |t|
     t.string   "permalink"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20131208200120) do
     t.integer  "founded_year"
     t.integer  "founded_month"
     t.integer  "founded_day"
-    t.string   "funds"
+    t.text     "funds",               limit: 255
     t.string   "investments"
     t.string   "homepage_url"
     t.integer  "number_of_employees"

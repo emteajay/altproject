@@ -3,3 +3,11 @@ attr_reader :name, :total_money_raised
 put API access in the controller - no need for model
 
 put permalink in the database - query the table 
+
+	# def search
+	# 	model_type = params[:search_model]
+	# 	if model_type == "Company"
+	# 		Company.search_for
+	# 	elsif model_type == "People"
+	# 		Person.search_for
+	# end

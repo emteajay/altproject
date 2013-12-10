@@ -34,16 +34,14 @@
 	<div class="row">
 		<div class="span9"><%= yield %></div>
 		<div class="span3">
-			<br>
-			<select id="search">
+<!-- 			<select id="search">
 				<option value="company">Company</option>
 				<option value="people">People</option>
 				<option value="investors">Investors</option>
-			</select>
+			</select> -->
 			<% search = "companies" %>
 			<h4> Search Database </h4>
-
-			<%= form_tag "/#{search}", method: "GET" do %>
+			<%= form_tag "#{search}", method: "GET" do %>
 			  <%= text_field_tag :q, params[:q] %>
 			  <%= submit_tag "search" %>
 			<% end %>
