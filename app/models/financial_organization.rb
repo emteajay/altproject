@@ -13,8 +13,8 @@ class FinancialOrganization < ActiveRecord::Base
 
 	def self.search_for(query) #self is like company.search_for
 		financial_organization = Crunchbase::FinancialOrganization.find(query)
-		saved_company = FinancialOrganization.where(name: query) #use when stored to database. DONT DO YET BECAUSE DATABASE WON'T BE UPDATED
-		saved_company = FinancialOrganization.find_or_create_by(
+		saved_financial_organization = FinancialOrganization.where(name: query) #use when stored to database. DONT DO YET BECAUSE DATABASE WON'T BE UPDATED
+		saved_financial_organization = FinancialOrganization.find_or_create_by(
 			name: financial_organization.name  ,
 			permalink: financial_organization.permalink ,
 			description: financial_organization.description ,
