@@ -1,6 +1,6 @@
 class FinancialOrganization < ActiveRecord::Base
 
-	has_many :companies
+	has_many :invesment
 
 	serialize :funds
 	serialize :offices

@@ -71,7 +71,6 @@ ActiveRecord::Schema.define(version: 20131208200120) do
     t.float    "adjustment"
     t.float    "net_asset_value"
     t.float    "irr"
-    t.integer  "users_id"
     t.integer  "financial_organizations_id"
     t.datetime "created_at"
     t.datetime "updated_at"

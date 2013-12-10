@@ -6,6 +6,7 @@ AltDash::Application.routes.draw do
   get "splash/about"
   get "splash/help"
   get "splash/contact"
+  get "splash/index"
   get "companies/index"
 
   root "splash#index"

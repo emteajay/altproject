@@ -1,6 +1,6 @@
 class Companies < ActiveRecord::Base
 
-	belongs_to :investments
+	belongs_to :investment
 
 	serialize :offices
 	serialize :acquisitions

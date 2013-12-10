@@ -17,7 +17,7 @@
 			      <span class="icon-bar"></span>
 			      <span class="icon-bar"></span>
 		    </a>
-		    <a class="brand" href="">AltDash</a>
+		    <a class="brand" href= <% splash_index_path %> >AltDash</a>
 		    <div class="nav-collapse">
 		    	<ul class="nav">
 		    		<li><%= link_to 'About Us', splash_about_path %></li>
@@ -39,7 +39,7 @@
 				<option value="people">People</option>
 				<option value="investors">Investors</option>
 			</select> -->
-			<% search = "investors" %>
+			<% search = "companies" %>
 			<h4> Search Database </h4>
 			<%= form_tag "#{search}", method: "GET" do %>
 			  <%= text_field_tag :q, params[:q] %>

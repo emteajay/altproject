@@ -1,9 +1,9 @@
 <section>
 	<h4> <%= @investor.name %> </h4>
-	<p> <%= @investor.founded_year %> </p>
-	<p> Phone Number: <%= @investor.phone_number %> </p>
-	<p> <%= @investor.homepage_url %> </p>
+	<p> <strong>Founded: </strong><%= @investor.founded_year %> </p>
+	<p> <strong> Phone Number: </strong><%= @investor.phone_number %> </p>
+	<p> <a href=<%= @investor.homepage_url %> > <%= @investor.homepage_url %> </a> </p>
 	<p> <%= raw @investor.overview %> </p>
-	<p> <%= @investor.investments %> </p>
-	<p> <%= @investor.relationships %> </p>
+	<p><strong> Funds Raised: </strong></p>
+	<p> <%= @investor.funds.to_ary[0]["name"] %> : <%= @investor.funds.to_ary[0]["raised_amount"] %> </p>
 </section>
