@@ -9,7 +9,7 @@ class CreateInvestments < ActiveRecord::Migration
       t.float :adjustment
       t.float :net_asset_value
       t.float :irr
-      t.integer :user_id
+      t.references :users
       t.references :financial_organizations
 
       t.timestamps
