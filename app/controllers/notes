@@ -62,3 +62,5 @@ put permalink in the database - query the table
     t.string   "blog_url"
     t.datetime "created_at"
   end
+
+  fathomless-tor-4268
