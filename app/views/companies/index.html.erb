@@ -1,3 +1,4 @@
+<%- model_class = Companies -%>
 <section>
 	<h4> <%= @company.name %> </h4>
 	<p> <strong> Phone Number: </strong> <%= @company.phone_number %> </p>
@@ -10,5 +11,34 @@
 	<p> <strong> Category: </strong><%= @company.category_code.upcase %> </p>
 <!-- 	<p> Offices: <%= @company.offices %> </p> -->
 	<p> <strong>Number of Employees: </strong> <%= @company.number_of_employees %> </p>
-	<p> <%= raw @company.overview %> </p>
+	
+    <table class="table table-striped">
+    	<thead>
+		    <tr>
+		      <th><%= model_class.human_attribute_name("Round") %></th>
+		      <th><%= model_class.human_attribute_name("Funded Year") %></th>
+		      <th><%= model_class.human_attribute_name("Raised") %></th>
+		      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+		    </tr>
+	  </thead>
+	  <tbody>
+		    <% @company.funding_rounds.each do |round| %>
+		      <tr>
+		        <td><%= round["round_code"].capitalize %></td>
+		        <td><%= round["funded_year"] %></td>
+		        <td><%= round["raised_amount"] %></td>
+		        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_company_path(@company), :class => 'btn btn-mini' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      companies_path(@company),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-mini btn-danger' %>        
+        		</td>
+		      </tr>
+		    <% end %>
+	    </tbody>
+    </table>
+    <p> <%= raw @company.overview %> </p>
 </section>
