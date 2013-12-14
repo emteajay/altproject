@@ -3,12 +3,12 @@
 	<h4> <%= @company.name %> </h4>
 	<p> <strong> Phone Number: </strong> <%= @company.phone_number %> </p>
 	<p> <strong> Twitter Username: </strong> <%= @company.twitter_username %> </p>
-	<p> <a href=<%= @company.homepage_url %> > <%= @company.homepage_url %> </a> </p>
+	<p> <strong>Homepage: </strong> <a href=<%= @company.homepage_url %> > <%= @company.homepage_url %> </a> </p>
 	<p> <% @company.permalink %> </p>
 	<p> <strong> Founded: </strong> <%= @company.founded_year %> </p>
 	<p> <strong> Funds Raised: </strong> <%= @company.total_money_raised %> </p>
 <!-- 	<p> Funding Rounds: <%= @company.funding_rounds %> </p> -->
-	<p> <strong> Category: </strong><%= @company.category_code.upcase %> </p>
+	<p> <strong> Category: </strong><%= @company.category_code.capitalize %> </p>
 <!-- 	<p> Offices: <%= @company.offices %> </p> -->
 	<p> <strong>Number of Employees: </strong> <%= @company.number_of_employees %> </p>
 	
@@ -16,8 +16,10 @@
     	<thead>
 		    <tr>
 		      <th><%= model_class.human_attribute_name("Round") %></th>
-		      <th><%= model_class.human_attribute_name("Funded Year") %></th>
-		      <th><%= model_class.human_attribute_name("Raised") %></th>
+		      <th style="text-align: center;"><%= model_class.human_attribute_name("Month") %></th>
+		      <th style="text-align: center;"><%= model_class.human_attribute_name("Year") %></th>
+		      <th style="text-align: right;"><%= model_class.human_attribute_name("Raised") %></th>
+		      <th ><%= model_class.human_attribute_name("Source") %></th>
 		      <th><%=t '.actions', :default => t("helpers.actions") %></th>
 		    </tr>
 	  </thead>
@@ -25,8 +27,10 @@
 		    <% @company.funding_rounds.each do |round| %>
 		      <tr>
 		        <td><%= round["round_code"].capitalize %></td>
-		        <td><%= round["funded_year"] %></td>
-		        <td><%= round["raised_amount"] %></td>
+		        <td style="text-align: center;"><%= round["funded_month"] %></td>
+		        <td style="text-align: center;"><%= round["funded_year"] %></td>
+		        <td style="text-align: right;"><%= number_with_delimiter(round["raised_amount"].to_int, :delimiter => ',') %></td>
+		        <td > <a href= <%= round["source_url"] %> > Link </a> </td>
 		        <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_company_path(@company), :class => 'btn btn-mini' %>
@@ -38,6 +42,20 @@
         		</td>
 		      </tr>
 		    <% end %>
+		    <div>
+	        <tr>
+	          <th>Total Raised</th>
+	          <th></th>   
+	          <th></th>
+	          <%	funding_sum = 0 %>
+	          <% @company.funding_rounds.each do |round| %>
+	          	<%  funding_sum += round["raised_amount"] %>
+	          <% end %> 
+	          	<th style="text-align: right;"> <%= number_with_delimiter(funding_sum.to_int, :delimiter => ',') %> </th>
+	          <th> </th>
+	          <th> </th>
+	        </tr>
+	      </div>
 	    </tbody>
     </table>
     <p> <%= raw @company.overview %> </p>
